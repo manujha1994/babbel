@@ -15,8 +15,8 @@ The use case can be summarized as:
 ## Solution Overview
 
 This repository consists of two parts:
-1. **Frontend**: A Single Page Application (SPA) built using React to allow users to input full names and company domains and display derived email addresses. The SPA interacts with the backend service to fetch the email addresses.
-2. **Backend**: A microservice built with Node.js that handles the logic for deriving email addresses based on the given data. It analyzes existing email patterns and applies them to new input to derive possible email addresses.
+1. **Frontend - babbel-web**: A Single Page Application (SPA) built using React to allow users to input full names and company domains and display derived email addresses. The SPA interacts with the backend service to fetch the email addresses.
+2. **Backend - babbel-service**: A microservice built with Node.js that handles the logic for deriving email addresses based on the given data. It analyzes existing email patterns and applies them to new input to derive possible email addresses.
 
 ## Key Features
 
