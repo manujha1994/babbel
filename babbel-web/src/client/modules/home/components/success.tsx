@@ -38,6 +38,8 @@ export default function Success({
               handleCopy();
             }
           }}
+          data-testid="copy-icon"
+          aria-label="Copy email"
         >
           <CopyIcon />
         </div>
@@ -48,6 +50,7 @@ export default function Success({
           className="w-full bg-[#FF7A03] font-[600] md:text-[1.125rem] text-[#FAFAFB] py-2 px-4 rounded-[0.75rem]
                     shadow-md leading-[2rem] hover:bg-[#FA9D3E] transition duration-300"
           onClick={resetForm}
+          data-testid="reset-button"
         >
           Try Another Email
         </button>
