@@ -22,7 +22,7 @@ export class EmailService {
         const domainFormatMap: Record<string, string> = {};
 
         for (const [name, email] of Object.entries(data)) {
-            const domain = email.split('@')[1];
+            const domain = email.split('@')[1].toLowerCase();
             if (!domainFormatMap[domain]) {
                 domainFormatMap[domain] = this.extractFormatFromEmail(email, name);
             }
@@ -44,11 +44,11 @@ export class EmailService {
         Validator.validateMandatoryInput(fullName, domain);
         Validator.validateFullName(fullName);
         Validator.validateDomain(domain);
-        const format = this.domainFormatMap[domain];
+        const format = this.domainFormatMap[domain.toLowerCase()];
         if (!format) {
             throw new DomainError(domain);
         }
-        const derivedEmail = this.applyFormat(fullName, format, domain);
+        const derivedEmail = this.applyFormat(fullName, format, domain.toLowerCase());
         logger.info({ requestId, derivedEmail, message: 'Derived email successfully' });
         return derivedEmail;
     }
